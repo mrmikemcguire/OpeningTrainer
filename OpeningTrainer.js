@@ -62,12 +62,12 @@ ngDemo.controller('nimzoController', function($scope)
             {
             name: "Aragorn",
             race: "Human Ranger",
-            image: "images/aragorn200.png"
+            image: "images/move1.png"
             },
             {
             name: "Gollum/Smeagol",
             race: "Hobbit",
-            image: "images/gollum200.png"
+            image: "images/move2.png"
             },
             {
             name: "Legolas",
