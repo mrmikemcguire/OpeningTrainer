@@ -5,23 +5,23 @@ ngDemo.config(function($routeProvider)
     $routeProvider
         .when('/', 
               {
-              templateUrl : 'pages/home.html',
+              templateUrl : 'pages/home.htm',
               controller  : 'mainController'
 			  })
         .when('/colle', 
               {
-              templateUrl : 'pages/colle.html',
-              controller  : 'costController'
+              templateUrl : 'pages/colle.htm',
+              controller  : 'colleController'
 			  })
             .when('/array', 
               {
-              templateUrl : 'pages/array.html',
-              controller  : 'arrayController'
+              templateUrl : 'pages/nimzo.htm',
+              controller  : 'nimzoController'
               })
         .when('/input', 
               {
-              templateUrl : 'pages/input.html',
-              controller  : 'inputController'
+              templateUrl : 'pages/caro-kann.htm',
+              controller  : 'caro-kann/Controller'
 			  });
 	});
 
@@ -30,16 +30,35 @@ ngDemo.controller('mainController', function($scope)
     $scope.message = 'Choose your opening to practice';
 	});
 
-ngDemo.controller('costController', function($scope) 
+ngDemo.controller('colleController', function($scope) 
     {
-    $scope.quantity = 1;
-    $scope.price = 9.99;
+    $scope.positions =
+        [
+            {
+            opening: "colle",
+            questionPosition: "",
+            answerPosition: "",
+            move: ""
+            },
+            {
+            opening: "colle",
+            questionPosition: "",
+            answerPosition: "",
+            move: ""
+            } 
+        ];
 	});
 
-ngDemo.controller('arrayController', function($scope)
+ngDemo.controller('nimzoController', function($scope)
     {
     $scope.characters =
         [
+            {
+            opening: "nimzo",
+            questionPosition: "",
+            answerPosition: "",
+            move: ""
+            },
             {
             name: "Aragorn",
             race: "Human Ranger",
@@ -58,7 +77,7 @@ ngDemo.controller('arrayController', function($scope)
         ];
    });
 
-ngDemo.controller('inputController', function($scope) 
+ngDemo.controller('caro-kannController', function($scope) 
     {
     $scope.firstName = "";
     $scope.lastName = "";
