@@ -1,67 +1,52 @@
+<!--Overall design based on tutorial at https://scotch.io/tutorials/single-page-apps-with-angularjs-routing-and-templating     Chris Sevilleja 2013 -->
+
 <!DOCTYPE html>
+<html ng-app="ngDemo">
+
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet"href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="CWLandingPage.css">
-    <title>CodeWizard Home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" type="text/css" href="ngDemo.css">
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
+
 </head>
 
-<body>
-<div class="navbar navbar-inverse">
-    <div class="container">
-        <div class="navbar-header">
-            <a href="" class="navbar-brand">CodeWizard</a>
-            <button type="button" class="navbar-toggle" data-toggle="collapse"
-                    data-target=".navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
+<body ng-controller="mainController as main">
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#"><span>Angular Demo</span></a>
+            </div>
+
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
+                    <li><a href="#cost"><i class="fa fa-usd"></i> Cost</a></li>
+                    <li><a href="#array"><i class="fa fa-list"></i> Array</a></li>
+                    <li><a href="#input"><i class="fa fa-keyboard-o"></i> Input</a></li>
+                </ul>
+            </div>
         </div>
+    </nav>
 
-        <div class="collapse navbar-collapse">
-            <ul class="nav navbar-nav">
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">2014 <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="/Whack-a-Mick/whack.html">Whack-a-Mick</a></li>
-            <li><a href="/insult/insult.html">Shakespeare Insults</a></li>
-            <li><a href="/COLocationGame/index.html">CO Map Game</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-          </ul>
-        </li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">2015 <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Card Mechanics</a></li>
-            <li><a href="#">Something else</a></li>
-            <li><a href="#">Something else</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-          </ul>
-        </li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">2016 <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">NG-Demo</a></li>
-            <li><a href="#">NY Times Reviews</a></li>
-            <li><a href="#">Next project</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-          </ul>
-        </li>
-            </ul>
-        </div>
-    </div>
-</div>
-
-<div class="container-fluid">
-    <h1>This is the CodeWizard Home Page</h1>
-</div>
-
+  <div id="main">
+    <div ng-view></div> <!-- this is where content will be injected -->
+  </div>
+  
+  <footer class="text-center">
+    <h3>Mike McGuire &#169;  2016</h3>
+  </footer>
+  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="ngDemo.js"></script>
 </body>
 </html>
