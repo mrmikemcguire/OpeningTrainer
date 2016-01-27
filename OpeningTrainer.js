@@ -8,9 +8,9 @@ ngDemo.config(function($routeProvider)
               templateUrl : 'pages/home.html',
               controller  : 'mainController'
 			  })
-        .when('/cost', 
+        .when('/colle', 
               {
-              templateUrl : 'pages/cost.html',
+              templateUrl : 'pages/colle.html',
               controller  : 'costController'
 			  })
             .when('/array', 
@@ -27,7 +27,7 @@ ngDemo.config(function($routeProvider)
 
 ngDemo.controller('mainController', function($scope) 
     {
-    $scope.message = 'See what cool things Angular can do!';
+    $scope.message = 'Choose your opening to practice';
 	});
 
 ngDemo.controller('costController', function($scope) 
