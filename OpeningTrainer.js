@@ -62,17 +62,17 @@ ngDemo.controller('nimzoController', function($scope)
             {
             name: "Aragorn",
             race: "Human Ranger",
-            image: "images/move1.png"
+            image: "images/small.png"
             },
             {
             name: "Gollum/Smeagol",
             race: "Hobbit",
-            image: "images/move2.png"
+            image: "images/medium.png"
             },
             {
             name: "Legolas",
             race: "Elf",
-            image: "images/legolas200.png"
+            image: "images/large.png"
             }
         ];
    });
