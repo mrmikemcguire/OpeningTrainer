@@ -21,7 +21,7 @@ ngDemo.config(function($routeProvider)
         .when('/input', 
               {
               templateUrl : 'pages/caro-kann.htm',
-              controller  : 'caro-kann/Controller'
+              controller  : 'caro-kannController'
 			  });
 	});
 
@@ -79,14 +79,15 @@ ngDemo.controller('nimzoController', function($scope)
 
 ngDemo.controller('caro-kannController', function($scope) 
     {
-    $scope.cfg = 
+    $scope.message = 'Hello World!';
+    var cfg = 
         {
         showNotation: false,
         orientation: 'black',
         draggable: true,
         position: 'rnbqkb1r/pp2pppp/2p2n2/3p4/2PP4/2N5/PP2PPPP/R1BQKBNR w KQkq d6 0 4'
         };
-    var board = ChessBoard('board', $scope.cfg);
+    $scope.board = ChessBoard('board', cfg);
 	});
 
 $(document).on('click','.navbar-collapse.in',function(e)
