@@ -92,11 +92,26 @@ ngDemo.controller('caro-kannController', function($scope)
         $scope.board.start(false)
         };
 
-    $scope.ruyLopez = function() 
+    $scope.advance = function() 
         {
-        var ruyLopez = 'r1bqkbnr/pppp1ppp/2n5/1B2p3/4P3/5N2/PPPP1PPP/RNBQK2R';
-        $scope.board.position(ruyLopez, false);
+        var advance = 'rnbqkbnr/pp2pppp/2p5/3pP3/3P4/8/PPP2PPP/RNBQKBNR b KQkq - 0 3';
+        $scope.board.position(advance, false);
         };
+    
+    $scope.exchange = function() 
+        {
+        var exchange = 'rnbqkbnr/pp2pppp/2p5/3P4/3P4/8/PPP2PPP/RNBQKBNR b KQkq - 0 3';
+        $scope.board.position(exchange, false);
+        };
+    
+    $scope.main = function() 
+        {
+        var main = 'rnbqkbnr/pp2pppp/2p5/8/3PN3/8/PPP2PPP/R1BQKBNR b KQkq - 0 4';
+        $scope.board.position(main, false);
+        };
+    
+//4...Bf5 FEN: 'rn1qkbnr/pp2pppp/2p5/5b2/3PN3/8/PPP2PPP/R1BQKBNR w KQkq - 1 5' 
+    
 
     $scope.rookCM = function() 
         {
