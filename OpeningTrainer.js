@@ -79,33 +79,26 @@ ngDemo.controller('nimzoController', function($scope)
 
 ngDemo.controller('caro-kannController', function($scope) 
     {
-//    $scope.message = 'Hello World!';
-//    var cfg = 
-//        {
-//        showNotation: false,
-//        orientation: 'black',
-//        draggable: true,
-//        position: 'rnbqkb1r/pp2pppp/2p2n2/3p4/2PP4/2N5/PP2PPPP/R1BQKBNR w KQkq d6 0 4'
-//        };
-//    $scope.board = ChessBoard('board', cfg);
+    var cfg = 
+        {
+        showNotation: false,
+        orientation: 'black',
+        draggable: true,
+        };
+    $scope.board = ChessBoard('board', cfg);
     
-    $scope.board = ChessBoard('board');
-
     $scope.startMe = function() 
         {
         $scope.board.start(false)
-//        $scope.board.showNotation: false
-//        $scope.board.orientation: 'black',
-//        $scope.board.draggable: true
-        }
+        };
 
-    $('#setRuyLopezBtn').on('click', function() 
+    $scope.ruyLopez = function() 
         {
         var ruyLopez = 'r1bqkbnr/pppp1ppp/2n5/1B2p3/4P3/5N2/PPPP1PPP/RNBQK2R';
-        board.position(ruyLopez, false);
-        });
+        $scope.board.position(ruyLopez, false);
+        };
 
-    $('#setRookCheckmateBtn').on('click', function() 
+    $scope.rookCM = function() 
         {
         var rookCheckmate = 
             {
@@ -113,8 +106,8 @@ ngDemo.controller('caro-kannController', function($scope)
             c4: 'wK',
             a7: 'wR'
             };
-        board.position(rookCheckmate, false);
-        });
+        $scope.board.position(rookCheckmate, false);
+        };
     });
 
 
