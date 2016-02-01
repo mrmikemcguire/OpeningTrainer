@@ -79,12 +79,21 @@ ngDemo.controller('nimzoController', function($scope)
 
 ngDemo.controller('caro-kannController', function($scope) 
     {
+    var onDrop = function(source, target, piece, newPos, oldPos, orientation)   {
+        if( ChessBoard.objToFen(newPos) == 'rn1qkbnr/pp2pppp/2p5/5b2/3PN3/8/PPP2PPP/R1BQKBNR' )
+            alert("Correct!");
+        else
+            alert("Incorrect");
+      };
+    
     var cfg = 
         {
         showNotation: false,
         orientation: 'black',
+        onDrop: onDrop,
         draggable: true,
         };
+    
     $scope.board = ChessBoard('board', cfg);
     
     $scope.startMe = function() 
