@@ -79,12 +79,14 @@ ngDemo.controller('nimzoController', function($scope)
 
 ngDemo.controller('caro-kannController', function($scope) 
     {
-    $scope.firstName = "";
-    $scope.lastName = "";
-    $scope.fullName = function() 
+    $scope.cfg = 
         {
-        return $scope.firstName + " " + $scope.lastName;
-        }
+        showNotation: false,
+        orientation: 'black',
+        draggable: true,
+        position: 'rnbqkb1r/pp2pppp/2p2n2/3p4/2PP4/2N5/PP2PPPP/R1BQKBNR w KQkq d6 0 4'
+        };
+    var board = ChessBoard('board', $scope.cfg);
 	});
 
 $(document).on('click','.navbar-collapse.in',function(e)
