@@ -1,6 +1,6 @@
-var ngDemo = angular.module('ngDemo', ['ngRoute']);
+var CT = angular.module('chessTrainer', ['ngRoute']);
 
-ngDemo.config(function($routeProvider) 
+CT.config(function($routeProvider) 
     {
     $routeProvider
         .when('/', 
@@ -13,24 +13,24 @@ ngDemo.config(function($routeProvider)
               templateUrl : 'pages/colle.htm',
               controller  : 'colleController'
 			  })
-            .when('/array', 
+            .when('/nimzo', 
               {
               templateUrl : 'pages/nimzo.htm',
               controller  : 'nimzoController'
               })
-        .when('/input', 
+        .when('/CK', 
               {
               templateUrl : 'pages/caro-kann.htm',
               controller  : 'caro-kannController'
 			  });
 	});
 
-ngDemo.controller('mainController', function($scope) 
+CT.controller('mainController', function($scope) 
     {
     $scope.message = 'Choose your opening to practice';
 	});
 
-ngDemo.controller('colleController', function($scope) 
+CT.controller('colleController', function($scope) 
     {
     $scope.positions =
         [
@@ -49,35 +49,23 @@ ngDemo.controller('colleController', function($scope)
         ];
 	});
 
-ngDemo.controller('nimzoController', function($scope)
+CT.controller('nimzoController', ['$scope', '$http', function($scope, $http) 
     {
-    $scope.characters =
-        [
-            {
-            opening: "nimzo",
-            questionPosition: "",
-            answerPosition: "",
-            move: ""
-            },
-            {
-            name: "Aragorn",
-            race: "Human Ranger",
-            image: "images/small.png"
-            },
-            {
-            name: "Gollum/Smeagol",
-            race: "Hobbit",
-            image: "images/medium.png"
-            },
-            {
-            name: "Legolas",
-            race: "Elf",
-            image: "images/large.png"
-            }
-        ];
-   });
+    
+//    $http.get('http://op12no2.me/toys/lozzadev/play.htm?fen=8/8/8/2r1k3/8/4K3/8/8%20w%20-%20-%200%201')
+//        .success(function (data) 
+//            {
+//            console.log("Hooray!");
+//            $scope.title = data.results.books[0].title;
+//            })
+//        .error(function (data, status) 
+//            {
+//            console.log("Oops...");
+//            });
+        }
+	]);
 
-ngDemo.controller('caro-kannController', function($scope) 
+CT.controller('caro-kannController', function($scope) 
     {
     var onDrop = function(source, target, piece, newPos, oldPos, orientation)   {
         if( ChessBoard.objToFen(newPos) == 'rn1qkbnr/pp2pppp/2p5/5b2/3PN3/8/PPP2PPP/R1BQKBNR' )
