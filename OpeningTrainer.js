@@ -36,15 +36,21 @@ CT.controller('colleController', function($scope)
         [
             {
             opening: "colle",
+            toMove: "",
             questionPosition: "",
-            answerPosition: "",
-            move: ""
+            answerPosition: ""
             },
             {
             opening: "colle",
+            toMove: "",
             questionPosition: "",
-            answerPosition: "",
-            move: ""
+            answerPosition: ""
+            },
+            {
+            opening: "colle",
+            toMove: "",
+            questionPosition: "",
+            answerPosition: ""
             } 
         ];
 	});
